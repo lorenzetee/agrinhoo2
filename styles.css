@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #a3d8f4, #dbe7c5);
+  color: #3e3e3e;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: #557a46;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  margin: 0 0 0.3rem;
+  user-select: none;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: #dbe7c5;
+  font-weight: 600;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #f7f0d6;
+  outline: none;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s forwards;
+}
+
+section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+section:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+section:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+section:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+section h2 {
+  color: #557a46;
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #a3d8f4;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  user-select: none;
+}
+
+.intro p {
+  font-size: 1.2rem;
+}
+
+.features {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feature {
+  flex: 1 1 280px;
+  background: #f7f0d6;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(85, 122, 70, 0.25);
+  transition: transform 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(85, 122, 70, 0.35);
+}
+
+.feature h3 {
+  margin-top: 0;
+  color: #3e3e3e;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.feature p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gallery img:hover,
+.gallery img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+footer {
+  background: #557a46;
+  color: #e1e6cf;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  user-select: none;
+  margin-top: 2rem;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1100;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+button {
+  background-color: #557a46;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  background-color: #3e5b2f;
+  outline: none;
+}

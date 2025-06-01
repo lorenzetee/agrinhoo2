@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festival das Raízes - Conexão Campo & Cidade</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <h1>Festival das Raízes</h1>
+  <p>Conectando Campo e Cidade com Cultura e Alegria</p>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#atracoes">Atrações</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro" id="sobre">
+    <h2>Sobre o Festival</h2>
+    <p>
+      O Festival das Raízes celebra as conexões e a rica cultura que unem o campo e a cidade. Aqui, trazemos música, gastronomia, artesanato e histórias que mostram a diversidade e a união entre esses dois mundos. Venha festejar e descobrir como o rural e o urbano se complementam, criando momentos únicos de troca e convivência.
+    </p>
+  </section>
+
+  <section id="atracoes">
+    <h2>Atrações Principais</h2>
+    <div class="features">
+      <article class="feature" tabindex="0" aria-label="Música e Dança">
+        <h3>Música & Dança</h3>
+        <p>Apresentações de bandas regionais, grupos de dança tradicional e shows que misturam ritmos urbanos e rurais para todos os gostos.</p>
+      </article>
+      <article class="feature" tabindex="0" aria-label="Gastronomia Raiz">
+        <h3>Gastronomia Raiz</h3>
+        <p>Barracas com comidas típicas do campo e da cidade, com ingredientes frescos e temperos que conquistam o paladar de todos.</p>
+      </article>
+      <article class="feature" tabindex="0" aria-label="Feira de Artesanato">
+        <h3>Feira de Artesanato</h3>
+        <p>Exposição e venda de produtos artesanais feitos por comunidades rurais e artistas urbanos que valorizam a cultura local.</p>
+      </article>
+      <article class="feature" tabindex="0" aria-label="Oficinas e Palestras">
+        <h3>Oficinas & Palestras</h3>
+        <p>Atividades educativas para todas as idades, abordando temas como sustentabilidade, história local e práticas integrais entre campo e cidade.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="gallery" role="list">
+      <img src="mandd.jpeg.png" alt="Dança tradicional com figurino colorido" tabindex="0" role="listitem" />
+      <img src="gatronomia.jpeg.png" alt="Comida típica sendo servida em feira" tabindex="0" role="listitem" />
+      <img src="artesanato.jpeg.png" alt="Artigos de artesanato expostos em feira" tabindex="0" role="listitem" />
+      <img src="oficinas e palestras.jpeg.png" alt="Palestra sobre sustentabilidade no campo e cidade" tabindex="0" role="listitem" />
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Quer saber mais ou participar do Festival? Envie sua mensagem:</p>
+    <form id="contactForm" style="max-width:500px;">
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" required /><br />
+
+      <label for="email">E-mail:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="mensagem">Mensagem:</label><br />
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br />
+      
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="resposta" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 Festival das Raízes - Conexão Campo & Cidade
+</footer>
+
+<!-- Modal for image gallery -->
+<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Visualização ampliada da imagem">
+  <img id="modalImg" src="" alt="" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
