@@ -6,6 +6,59 @@
   <title>Festival das Raízes - Conexão Campo & Cidade</title>
   <link href="styles.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS para o botão de celebração e animação dos confetes */
+    .btn-celebration {
+      background: linear-gradient(135deg, #35ff6b, #35ff6b);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-celebration:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(105, 251, 15, 0.648);
+      background: linear-gradient(135deg, #73ff00, #22ff00);
+    }
+
+    .celebration-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #557a46, #557a46);
+      margin: 20px 0;
+      border-radius: 15px;
+    }
+
+    .celebration-section h2 {
+      color: #ffffff;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .celebration-section p {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(calc(100vh + 50px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,6 +79,18 @@
     <p>
       O Festival das Raízes celebra as conexões e a rica cultura que unem o campo e a cidade. Aqui, trazemos música, gastronomia, artesanato e histórias que mostram a diversidade e a união entre esses dois mundos. Venha festejar e descobrir como o rural e o urbano se complementam, criando momentos únicos de troca e convivência.
     </p>
+  </section>
+
+  <!-- SEÇÃO DE CELEBRAÇÃO ADICIONADA -->
+  <section class="celebration-section">
+    <h2>🎉 Junte-se à Festa!</h2>
+    <p>
+      Clique no botão abaixo e participe da nossa celebração especial! 
+      Vamos festejar juntos as conexões entre campo e cidade com muita alegria!
+    </p>
+    <button class="btn-celebration" onclick="showCelebration()">
+      🎊 Participar da Celebração 🎊
+    </button>
   </section>
 
   <section id="atracoes">
@@ -89,5 +154,38 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+// FUNÇÃO DA CELEBRAÇÃO COM CONFETES
+function showCelebration() {
+    // Array com os emojis que vão cair
+    const celebrations = ['🎉', '🎊', '✨', '🌟', '💫', '🎈', '🌈', '🎁'];
+    
+    // Cria 25 elementos caindo
+    for (let i = 0; i < 25; i++) {
+        setTimeout(() => {
+            // Cria um novo elemento div
+            const celebration = document.createElement('div');
+            celebration.innerHTML = celebrations[Math.floor(Math.random() * celebrations.length)];
+            
+            // Estiliza o elemento
+            celebration.style.position = 'fixed';
+            celebration.style.left = Math.random() * window.innerWidth + 'px';
+            celebration.style.top = '-50px';
+            celebration.style.fontSize = '2rem';
+            celebration.style.zIndex = '9999';
+            celebration.style.pointerEvents = 'none';
+            celebration.style.animation = 'fall 4s linear forwards';
+            
+            // Adiciona ao body
+            document.body.appendChild(celebration);
+            
+            // Remove o elemento após 4 segundos
+            setTimeout(() => {
+                celebration.remove();
+            }, 4000);
+        }, i * 80); // Delay escalonado para criar efeito cascata
+    }
+}
+</script>
 </body>
 </html>
